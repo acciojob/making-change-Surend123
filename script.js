@@ -19,7 +19,7 @@ const makeChange = (c) => {
 			if(obj[i][1]==0.25){
 				num-=obj[i][1];
 				res.q +=1;
-			}else if(obj[i][1]==o.10){
+			}else if(obj[i][1]==0.10){
 				num-=obj[i][1];
 				res.d +=1;
 			}else if(obj[i][1]==0.05){
@@ -27,10 +27,11 @@ const makeChange = (c) => {
 				res.n +=1;
 			}else{
 				num-=obj[i][1];
-				res.n +=1;
+				res.p +=1;
 			}
 		}
 	}
+	
 	return res;
 	
 };
