@@ -13,25 +13,16 @@ const makeChange = (c) => {
 		"p":0,
 	};
 
-	let num = c/100;
+	let num = Number(c)/100;
 	for(let i=1;i<=4;i++){
 		while(num>=obj[i][1]){
-			if(obj[i][1]==0.25){
-				num-=obj[i][1];
-				res.q +=1;
-			}else if(obj[i][1]==0.10){
-				num-=obj[i][1];
-				res.d +=1;
-			}else if(obj[i][1]==0.05){
-				num-=obj[i][1];
-				res.n +=1;
-			}else{
-				num-=obj[i][1];
-				res.p +=1;
-			}
+			
+			num -= obj[i][1];
+			res[obj[i][0]] +=1;
+
+			num = Math.round(num*100)/100;
 		}
 	}
-	
 	return res;
 	
 };
